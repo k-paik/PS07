@@ -1,0 +1,41 @@
+---
+title: "PS07 - GitHub Test"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Modified this header
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Example Code with ggplot2
+
+```{r}
+library(dplyr)
+```
+
+You can include R code in the document as follows:
+
+```{r cars}
+cars <- cars %>% 
+  mutate(origin = ifelse((speed*dist >= 300), "Canada", "Mexico")) %>% 
+  mutate(year_recorded = 1920)
+summary(cars)
+glimpse(cars)
+```
+
+## Example Plot
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+library(ggplot2)
+ggplot(pressure, aes(x = temperature, y = pressure)) +
+  geom_point() +
+  labs(title = "Pressure vs. temperature")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
